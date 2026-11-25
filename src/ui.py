@@ -23,6 +23,14 @@ if str(project_root) not in sys.path:
 
 load_dotenv(project_root / ".env")
 
+# Sync Streamlit Cloud secrets (if configured) into environment variables
+try:
+    for _k, _v in st.secrets.items():
+        if isinstance(_v, str) and _k not in os.environ:
+            os.environ[_k] = _v
+except Exception:
+    pass
+
 from src.db_backend import (
     get_backend_mode,
     get_fleet_snapshot,
@@ -42,7 +50,7 @@ NVIDIA_MODELS = [
 # 2. PAGE CONFIGURATION & THEME
 # ==========================================
 st.set_page_config(
-    page_title="CryoGuard AI • Cold-Chain Dispatch Console",
+    page_title="ColdPulse Ops • Cold-Chain Dispatch Console",
     page_icon="🧊",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -375,7 +383,7 @@ with st.sidebar:
         else "https://cdn-icons-png.flaticon.com/512/2830/2830305.png",
         width=65,
     )
-    st.title("CryoGuard Command")
+    st.title("ColdPulse Ops")
 
     app_mode = st.radio(
         "System Mode",

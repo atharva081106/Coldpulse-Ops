@@ -1,4 +1,4 @@
-"""Live trajectory evaluation script for the CryoGuard Cold-Chain Agent."""
+"""Live trajectory evaluation script for the ColdPulse Ops Cold-Chain Agent."""
 import sys
 from pathlib import Path
 

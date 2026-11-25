@@ -1,4 +1,4 @@
-# CryoGuard AI — Cold-Chain Logistics Dispatch Console
+# ColdPulse Ops — Cold-Chain Logistics Dispatch Console
 
 An agentic **LangGraph + Streamlit** operations platform for monitoring refrigerated fleet telemetry, evaluating corridor weather risks, enforcing Standard Operating Procedures (SOPs), and dispatching **Human-in-the-Loop (HITL)** escalations.
 
